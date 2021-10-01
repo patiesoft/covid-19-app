@@ -4,7 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 
-import VueAxios from "vue-axios";
+
 import { BootstrapVue, BootstrapVueIcons } from "bootstrap-vue";
 
 import "bootstrap/dist/css/bootstrap.css";
