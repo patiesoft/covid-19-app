@@ -15,6 +15,10 @@
 		</div>
 		<b-container class="py-5 border">
 			<b-row>
+				<b-col class="text-right h5">Patient ID :</b-col>
+				<b-col class="text-left h5">{{ details.patientId }}</b-col>
+			</b-row>
+			<b-row>
 				<b-col class="text-right h5">Name :</b-col>
 				<b-col class="text-left h5">{{ details.name }}</b-col>
 			</b-row>
@@ -56,6 +60,7 @@ export default {
 			OTP: "",
 			details: {
 				name: "Ndumiso",
+                patientId:'355-T3D-8M0',
 				surname: "Ndzuza",
 				DOB: "13 June 2021",
 				testDate: "13/08/2021",
