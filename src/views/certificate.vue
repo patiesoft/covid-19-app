@@ -10,37 +10,40 @@
 
 		<h1>Certificate</h1>
 		<div class="mb-2">
-			
-			<b-avatar src="https://placekitten.com/600/600" size="10rem"></b-avatar>
+			<b-avatar :src="results.img_url" size="10rem"></b-avatar>
 		</div>
 		<b-container class="py-5 border">
 			<b-row>
 				<b-col class="text-right h5">Patient ID :</b-col>
-				<b-col class="text-left h5">{{ details.patientId }}</b-col>
+				<b-col class="text-left h5">{{ results.patientId }}</b-col>
+			</b-row>
+			<b-row>
+				<b-col class="text-right h5">National ID :</b-col>
+				<b-col class="text-left h5">{{ results.nationalID }}</b-col>
 			</b-row>
 			<b-row>
 				<b-col class="text-right h5">Name :</b-col>
-				<b-col class="text-left h5">{{ details.name }}</b-col>
+				<b-col class="text-left h5">{{ results.name }}</b-col>
 			</b-row>
 			<b-row>
 				<b-col class="text-right h5">Surname :</b-col>
-				<b-col class="text-left h5">{{ details.surname }}</b-col>
+				<b-col class="text-left h5">{{ results.surname }}</b-col>
 			</b-row>
 			<b-row>
 				<b-col class="text-right h5">Date of Birth :</b-col>
-				<b-col class="text-left h5">{{ details.DOB }}</b-col>
+				<b-col class="text-left h5">{{ results.DOB }}</b-col>
 			</b-row>
 			<b-row>
 				<b-col class="text-right h5">test Date :</b-col>
-				<b-col class="text-left h5">{{ details.testDate }}</b-col>
+				<b-col class="text-left h5">{{ results.testDate }}</b-col>
 			</b-row>
 			<b-row>
 				<b-col class="text-right h5">test Center :</b-col>
-				<b-col class="text-left h5">{{ details.testCenter }}</b-col>
+				<b-col class="text-left h5">{{ results.testCenter }}</b-col>
 			</b-row>
 			<b-row>
 				<b-col class="text-right h5">Test Result :</b-col>
-				<b-col class="text-left h5">{{ details.result }}</b-col>
+				<b-col class="text-left h5">{{ results.result }}</b-col>
 			</b-row>
 			<b-row class="mt-5 text-center justify-content-center">
 				<b-button @click="generateQR" variant="outline-info">Generate QR-Code</b-button>
@@ -57,21 +60,24 @@ export default {
 			email: "",
 			password: "",
 			hasSentSMS: false,
+			results: "",
 			OTP: "",
-			details: {
-				name: "Ndumiso",
-                patientId:'355-T3D-8M0',
-				surname: "Ndzuza",
-				DOB: "13 June 2021",
-				testDate: "13/08/2021",
-				testCenter: "Mkhiwa Clinic",
-				result: "Negative",
-				vaccination: {
-					numberOfDoces: 1,
-					type: "Johnson and Johnson",
-					date: "13 April 2021",
-				},
-			},
+			results: "",
+			// results: {
+			// 	name: "Ndumiso",
+			//     nationalID:96012900225,
+			//     patientId:'355-T3D-8M0',
+			// 	surname: "Ndzuza",
+			// 	DOB: "13 June 2021",
+			// 	testDate: "13/08/2021",
+			// 	testCenter: "Mkhiwa Clinic",
+			// 	result: "Negative",
+			// 	vaccination: {
+			// 		numberOfDoces: 1,
+			// 		type: "Johnson and Johnson",
+			// 		date: "13 April 2021",
+			// 	},
+			// },
 		};
 	},
 	methods: {
@@ -79,10 +85,13 @@ export default {
 			this.$router.push({ name: "home" });
 			console.log("clicked");
 		},
-        generateQR(){
+		generateQR() {
 			console.log("QR Code");
-            this.$router.push({name:'qrcode'})
-        }
+			this.$router.push({ name: "qrcode" });
+		},
+	},
+	mounted() {
+		this.results = this.$store.getters.getResults;
 	},
 };
 </script>

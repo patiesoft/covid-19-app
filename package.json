@@ -4,17 +4,24 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@adobe/helix-qr-code": "^1.1.2",
+    "axios": "^0.22.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "firebase": "^7.24.0",
+    "qrcode.vue": "^3.3.2",
+    "qrcodejs": "^1.0.0",
     "register-service-worker": "^1.7.1",
+    "st-qrcode": "^1.0.0",
     "vue": "^2.6.11",
+    "vue-qrcode": "^1.0.0",
+    "vue-qrcode.js": "^1.0.1",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
@@ -37,7 +44,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
-    "root": true,
+    "root": false,
     "env": {
       "node": true
     },
@@ -46,9 +53,6 @@
       "eslint:recommended",
       "@vue/prettier"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
     "rules": {},
     "overrides": [
       {

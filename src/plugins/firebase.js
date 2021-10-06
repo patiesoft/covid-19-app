@@ -6,13 +6,13 @@ import "firebase/firestore";
 
 // Firebase app config
 
-let firebaseConfig = {
-  apiKey: process.env.VUE_APP_API_KEY,
-  authDomain: process.env.VUE_APP_AUTH_DOMAIN,
-  projectId: process.env.VUE_APP_PROJECT_ID,
-  storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.VUE_APP_MESSAGING_SENDER_ID,
-  appId: process.env.VUE_APP_APP_ID,
+const firebaseConfig = {
+  apiKey: "AIzaSyAmoCP1PvJ6EydEatOz-HPj2rl38bw5vEA",
+  authDomain: "regional-qr-code-health-system.firebaseapp.com",
+  projectId: "regional-qr-code-health-system",
+  storageBucket: "regional-qr-code-health-system.appspot.com",
+  messagingSenderId: "596324947504",
+  appId: "1:596324947504:web:b50c70e258588f36407ff5"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -34,4 +34,4 @@ var FieldValue = firebase.firestore.FieldValue;
 const AUTH = firebase.auth;
 const Timestamp = firebase.firestore.Timestamp;
 
-export { auth, db, userCollection, FieldValue, Timestamp, AUTH };
+export { auth,firebase, db, userCollection, FieldValue, Timestamp, AUTH };

@@ -1,6 +1,8 @@
 <template>
-  <div id="app">   
+  <div id="app" class="p-0 m-o">   
     <router-view />
+    <div> 
+</div>
   </div>
 </template>
 
